@@ -1,0 +1,6 @@
+## Interface: @project-interface@
+## Title: tdPenetratingCold
+## Author: Dencer
+## Version: @project-version@
+
+Addon.lua
