@@ -1,0 +1,26 @@
+name: Publish 🚛
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Package addon
+        uses: curse-action/package@master
+
+      - name: Release to github
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: changelog.txt
+          files: |
+            *.zip
