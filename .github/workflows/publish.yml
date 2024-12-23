@@ -21,6 +21,5 @@ jobs:
       - name: Release to github
         uses: softprops/action-gh-release@v2
         with:
-          body_path: changelog.txt
           files: |
             *.zip
